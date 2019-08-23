@@ -5,8 +5,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.List;
-import java.util.Set;
 
 public class CheckWorkOfAdmin {
 
@@ -14,6 +12,8 @@ public class CheckWorkOfAdmin {
 
         WebDriver driver = getDriver();
         driver.get("http://prestashop-automation.qatestlab.com.ua/admin147ajyvk0/");
+
+        driver.manage().window().maximize();
 
         WebDriverWait wait = new WebDriverWait(driver, 20);
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id("email")));
@@ -134,6 +134,8 @@ public class CheckWorkOfAdmin {
 
         driver.navigate().refresh();
         System.out.println("Page title is " + driver.getTitle());
+
+        driver.quit();
 
 
     }
